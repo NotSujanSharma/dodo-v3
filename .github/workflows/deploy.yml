@@ -1,0 +1,63 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [master] # or your default branch
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read # Required for checkout
+  deployments: write # Required for creating deployments
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.14.0' # Matches your version
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '9.15.1' # Matches your version
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        env:
+          VITE_TMDB_READ_API_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGM4OTExMWMzYTdlODg0N2RhOGJkYmZhOTU3MDJhMyIsIm5iZiI6MTczNTYwMjczOS4wNTc5OTk4LCJzdWIiOiI2NzczMzIzMzc3ZTJiNmQ0Nzg5MmI2OGMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.YYteDA_w8_WF8lXGX7rB21Ofy5rA_o8th_4lR5MBtao" # Hardcoded for now
+          VITE_OPENSEARCH_ENABLED: false
+          VITE_CORS_PROXY_URL: "https://proxy.wafflehacker.io"
+          VITE_APP_DOMAIN: "https://dodo-v2.pages.dev"
+        run: pnpm run build
+        
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: "QVOOo1HeceqKbZ2PHCMeYDilIrlFjsnDnfzqRXT8"
+          accountId: "60ed5e563f7928dab206b652eb50eb0a"
+          projectName: dodo-v3 # Replace with your actual project name
+          directory: dist # Matches Vite’s default output directory
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
