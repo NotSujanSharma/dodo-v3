@@ -165,7 +165,7 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
             </DropdownLink>
           ) : null}
           <Divider />
-          <div className="my-4 flex justify-center items-center gap-4">
+          {/* <div className="my-4 flex justify-center items-center gap-4">
             <CircleDropdownLink
               href={conf().DISCORD_LINK}
               icon={Icons.DISCORD}
@@ -175,7 +175,7 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
               href="https://rentry.co/h5mypdfs"
               icon={Icons.TIP_JAR}
             />
-          </div>
+          </div> */}
         </div>
       </Transition>
     </div>

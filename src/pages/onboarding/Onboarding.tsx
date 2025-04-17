@@ -260,7 +260,7 @@ export function OnboardingPage() {
                     <br />
                   </>
                 )}
-                If you have more questions on how this works, feel free to ask
+                {/* If you have more questions on how this works, feel free to ask
                 on the{" "}
                 <a
                   href="https://discord.com/invite/7z6znYgrTG"
@@ -270,7 +270,7 @@ export function OnboardingPage() {
                 >
                   Dodo Discord
                 </a>{" "}
-                server!
+                server! */}
               </p>
             </div>
           }

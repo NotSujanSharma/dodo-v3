@@ -149,7 +149,7 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
               </a>
             </div>
           ) : null}
-          <p className="text-xs text-type-dimmed text-center pt-2 mx-4">
+          {/* <p className="text-xs text-type-dimmed text-center pt-2 mx-4">
             <a
               href="https://discord.gg/mcjnJK98Gd"
               target="_blank"
@@ -157,7 +157,7 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
             >
               Your ad here (づ ᴗ _ᴗ)づ♡
             </a>
-          </p>
+          </p> */}
         </div>
       ) : null}
       {/* End of ad */}
