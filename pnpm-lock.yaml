@@ -40,8 +40,8 @@ importers:
         specifier: ^0.7.2
         version: 0.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@movie-web/providers':
-        specifier: ^2.4.9
-        version: 2.4.9
+        specifier: ^2.4.11
+        version: 2.4.11
       '@noble/hashes':
         specifier: ^1.7.2
         version: 1.7.2
@@ -1158,8 +1158,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@movie-web/providers@2.4.9':
-    resolution: {integrity: sha512-LhZfIPxqRW5YDoQD5/QcOJMkwWqueVhzC6H2fXjCGVBOc+m3xsb26U3v5r2VrUbyYZlrDGoWVhzR3CCxIrOrnQ==}
+  '@movie-web/providers@2.4.11':
+    resolution: {integrity: sha512-O1Ce4c2iM8jleOKNvbm9zV7T9eABRauzWdAPZPqEOmvYeRUf2fzEUeX9bDAutIE61hcIjozxedZ/OkgjUO42nA==}
 
   '@napi-rs/wasm-runtime@0.2.8':
     resolution: {integrity: sha512-OBlgKdX7gin7OIq4fadsjpg+cp2ZphvAIKucHsNfTdJiqdOmOEwQd/bHi0VwNrcw5xpBJyUw6cK/QilCqy1BSg==}
@@ -5284,7 +5284,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@movie-web/providers@2.4.9':
+  '@movie-web/providers@2.4.11':
     dependencies:
       abort-controller: 3.0.0
       cheerio: 1.0.0-rc.12
