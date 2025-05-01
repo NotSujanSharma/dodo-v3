@@ -49,7 +49,7 @@ jobs:
         env:
           VITE_TMDB_READ_API_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGM4OTExMWMzYTdlODg0N2RhOGJkYmZhOTU3MDJhMyIsIm5iZiI6MTczNTYwMjczOS4wNTc5OTk4LCJzdWIiOiI2NzczMzIzMzc3ZTJiNmQ0Nzg5MmI2OGMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.YYteDA_w8_WF8lXGX7rB21Ofy5rA_o8th_4lR5MBtao" # Hardcoded for now
           VITE_OPENSEARCH_ENABLED: false
-          VITE_CORS_PROXY_URL: "https://proxy.wafflehacker.io"
+          VITE_CORS_PROXY_URL: "https://mr-nimbus.netlify.app"
           VITE_APP_DOMAIN: "https://dodo-v2.pages.dev"
         run: pnpm run build
         
